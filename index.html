@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yusuf</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <h1 class="title">Works of <br> Yusuf Sabuwala</h1>
+    <div class="floppy">
+        <div id="floppyDiskContainer" ></div>
+
+    </div>
+
+
+    <div class="menu">
+        <a href="#about">Who am I?</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#projects">Projects</a>
+        <a href="#links">Links</a>
+    </div>
+  
+    <section id="about">
+        <h1 class='sub'>Hey!</h1>
+        <p>My names yusuf! I normally code, play chess, and do dumb stuff</p>
+    <br>
+    </section>
+
+    <hr>
+    <section id="blogs">
+        <h1 class='sub'>Blogs</h1>
+        <div class="col-container">
+            <div class="card blog">
+
+                <h2><a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">Unraveling the Golden Thread</a></h2>
+
+                <p>Quantitative algorithms have always blown me away...</p>
+            </div>
+        </div>
+    </section>
+<hr>
+    <section id="projects">
+        <h1 class='sub'>Projects</h1>
+        <div class="grid-container">
+            <div class="card">
+
+                <h2><a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">Qsiml</a></h2>
+
+                <p>A minimalist Quantum computer simulator</p>
+            </div>
+
+            <div class="card">
+
+                <h2><a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">MazeNav</a></h2>
+  
+                <p>A IDDFS search algorithm to solve any maze</p>
+            </div>
+
+            <div class="card">
+  
+                <h2><a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">CNN Character recognition</a></h2>
+      ]
+                <p>A Neural Network to recognize handwritten characters</p>
+            </div>
+
+            <div class="card">
+  
+                <h2><a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">Gold prices transition matrix</a></h2>
+
+      ]
+                <p>Markov chain implementation to predict gold prices</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <hr>
+    <section id="links">
+        <h1 class='sub'>Links</h1>
+  <div class="cole">
+            <div class="flee"><a><i class="fab fa-github"> <p>Github</p></i></a></div>
+            <div class="flee"><a><i class="fab fa-linkedin"> <p>LinkedIn</p></i></a></div>
+            <div class="flee"><a><i class="fab fa-instagram"> <p>Instagram</p></i></a></div>
+</div>
+    </section>
+
+
+
+    <script>
+        // Scene and camera setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 600 / 800, 0.1);
+        const material = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: 0.5 });
+        camera.position.z = 6;
+
+        // Improved Lighting
+        const light = new THREE.AmbientLight(0xffffff, 1); // Soft white light with lower intensity
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1, 100); // White light
+        pointLight.position.set(2, 2, 2); // Adjust position as needed
+        scene.add(pointLight);
+
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 5, 5).normalize();
+        scene.add(directionalLight);
+
+        const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight2.position.set(-5, -5, -5).normalize(); // Add a second directional light
+        scene.add(directionalLight2);
+
+        // Renderer setup
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(600, 400);
+        document.getElementById('floppyDiskContainer').appendChild(renderer.domElement);
+
+        // Set the background color of the scene to #eeeeee
+        scene.background = new THREE.Color(0x222222);
+
+        // Load the 3D model
+        let floppyDisk; 
+        const loader = new THREE.GLTFLoader();
+        loader.load('models/floppy_disk.glb', (gltf) => {
+            floppyDisk = gltf.scene;
+            floppyDisk.scale.set(1.5,1.5,1.5);
+
+    
+
+            scene.add(floppyDisk);
+        }, undefined, (error) => {
+            console.error('Error loading the model:', error);
+        });
+
+// Rotation flags and variables
+let isDragging = false;
+    let previousMousePosition = {
+        x: 0,
+        y: 0
+    };
+
+    function onMouseDown(event) {
+        isDragging = true;
+    }
+
+    function onMouseUp() {
+        isDragging = false;
+    }
+
+    function onMouseMove(event) {
+        if (isDragging && floppyDisk) {
+            // Calculate the difference in mouse movement
+            const deltaMove = {
+                x: event.clientX - previousMousePosition.x,
+                y: event.clientY - previousMousePosition.y
+            };
+
+            // Rotate the model based on mouse movement
+            floppyDisk.rotation.y += deltaMove.x * 0.005;
+            floppyDisk.rotation.x += deltaMove.y * 0.005;
+
+            previousMousePosition = {
+                x: event.clientX,
+                y: event.clientY
+            };
+        }
+    }
+
+    // Store the initial mouse position
+    document.addEventListener('mousedown', (event) => {
+        previousMousePosition = {
+            x: event.clientX,
+            y: event.clientY
+        };
+        onMouseDown(event);
+    });
+
+    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Rotate automatically if not dragging
+        if (!isDragging && floppyDisk) {
+            floppyDisk.rotation.y += 0.01;
+            floppyDisk.rotation.z += 0.01;
+        }
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+        function onWindowResize() {
+    const container = document.getElementById('floppyDiskContainer');
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+}
+
+window.addEventListener('resize', onWindowResize, false);
+
+// Call the resize function once to ensure it starts with the correct size
+onWindowResize();
+    </script>
+    <script>
+        const floppyContainer = document.getElementById('floppyDiskContainer');
+    
+        // Change cursor to grabbing when mouse is held down
+        floppyContainer.addEventListener('mousedown', () => {
+            floppyContainer.style.cursor = 'grabbing';
+        });
+    
+        // Revert to grab cursor when mouse is released
+        floppyContainer.addEventListener('mouseup', () => {
+            floppyContainer.style.cursor = 'grab';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* styles.css */
+body {
+    background-color: #222222;
+    height: 100vh; 
+    margin: 0; 
+}
+
+.floppy{
+    display: flex; 
+   
+    align-items: center;
+    position: relative;
+    z-index: -1;
+    top: 10px; 
+}
+
+.title {
+    font-family: customfont;
+    font-size: 40px;
+    color: #eeeeee;
+    position: relative;
+    left: 30px;
+}
+
+#about{
+    text-align: center;
+}
+
+.col-container{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between project boxes */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.art{
+    width:1000px;
+    left: 200px;
+    position: absolute;
+}
+.sub {
+    font-family: customfont;
+    font-size: 40px;
+    color: #eeeeee; 
+    margin-left: 50px;
+}
+
+
+.blog{
+    width:500px;
+}
+
+@font-face {
+    font-family: customfont;
+    src: url(sans.ttf);
+}
+
+.menu {
+    position: absolute;
+    top: 200px; 
+    left: 950px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.menu a {
+    font-family: customfont;
+    font-weight: 600;
+    font-size: 40px;
+    color: #eeeeee ;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+.card{
+    border: solid white ;
+    border-radius: 5px;
+    margin:5px;
+    align-items: left;
+ 
+}
+
+a{
+    text-decoration: none; 
+    cursor: pointer;
+    color:white;
+    font-family: customfont;
+    transition: color 0.3s;
+
+}
+
+h2{
+    
+    font-family: customfont;
+    margin-left: 20px;
+    color: white;
+    
+}
+
+ a:hover {
+    color: #666666; 
+}
+
+p {
+    font-family: customfont;
+  
+    color: #eeeeee;
+    font-size: large;
+    margin-left: 50px;
+}
+
+
+#floppyDiskContainer {
+    width: 800px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 30px; 
+    cursor:grab
+    
+}
+
+img {
+display: block;
+width: 900px;
+}
+
+
+i{
+    color: white;
+    font-size:22px;
+    margin:10px;
+    font-family: customfont;
+}
+
+
+.flee{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#links {
+    color: #fff; /* or any color you prefer */
+    text-align: center;
+}
+
+#links .sub {
+    text-align: left; /* Left-aligns the title */
+    margin-left: 50px; /* Optional: adds a bit of left margin */
+}
+
+.cole {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+    gap: 30px; /* Space between each link */
+}
+
+.flee a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.flee i {
+    font-size: 24px; /* Adjust size of icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.flee p {
+    font-size: 16px; /* Adjust font size for the text */
+    margin: 0;
+}
+
+h3{
+    
+    padding-top: 8px;
+    font-family: customfont;
+
+    color: #eeeeee;
+}
