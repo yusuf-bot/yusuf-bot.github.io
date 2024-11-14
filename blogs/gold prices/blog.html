@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>Yusuf</title>
+    <link rel="icon" type="image/x-icon" href="../../icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <h1 class="title">Blogs of <br> Yusuf Sabuwala</h1>
+<hr>
+<hr>
+<h2>Unraveling the Golden Thread: A Personal Journey into Data-Driven Gold Analysis</h2>
+
+<div class="art">
+<p>Quantitative algorithms have always blown me away, being able to create a system that can consistently outperform the most informed stockbrokers, with all their financial incentives is such a beautiful picture. A picture I always wanted to be a part of.</p>
+    <p>The following alogorithm isn’t complex and I’d highly recommend any experienced trader to go through my program and give criticism on some factors I may have overlooked. The implementation is truly trivial with lots of room for improvement which I plan to cover in the next few months.</p>
+    <p>The inspiration that I could develop such a tool for analysis came from a reel, explaining about how most of the algortihms function, Markov Chains, a tool also used to predict weather. It truly is a simple, yet marvellous method, by creating a ‘chain’ where one days weather leads to the next using a few factors. </p>
+    <p>So given the high and low temperature, the air pressure and the humidity of today, what is the probability of rain tomorrow? Well just look at past data, and see the days we had the exact same states, and count the number of times it was followed by a rainy day, now divide that by the total number of times the state is observed in past data, and you have successfully developed a Markov chain.</p>
+    <p>Now the program only looks at the closing prices, and since I failed to find any minial library to develop the Markov chain and transition matrix necessary for the algorithm, I decided to create them myself, leading to the rather simplistic implementation.</p>
+    
+    <p>I partitioned the price movements into a set of different states based on the size and direction of its change. These states were:<br><br>
+    
+    • Significant Upward Trends: `inc > 5%`<br><br>
+    • Strong Upward Trends: `inc > 2%`<br><br>
+    • Moderate Upward Trends: `inc > 1%`<br><br>
+    • Slight Upward Trends: `inc < 1%`<br><br>
+    • Slight Downward Trends: `dec < 1%`<br><br>
+    • Moderate Downward Trends: `dec > 1%`<br><br>
+    • Strong Downward Trends: `dec > 2%`<br><br>
+    • Significant Downward Trends: `dec > 5%`<br><br>
+    
+    Then, I created a transition matrix below, where each row represents the current state, and the columns represent the states. Cell i, j contains the transition probability from state i to state j. From this matrix, we can infer something about the probabilities of future price movements.
+    <br> <br>
+    To make the insights more accessible, I applied the power of data visualization. Using the NetworkX library, I designed a directed graph where nodes represent states and edges represent the probability of transitioning between states. The thickness and color of the edges visually convey the strength of the transition probabilities.
+    <br><br>
+    <img src="graph.png">
+    <br><br>
+    <p>The graph above helps visualise the transition matrix, with each state represented as a node, and the width of the arrow corresponding to the relative probabilites of the transition from the inital state to the next</p>
+
+    <p>Analyising the data, also reveals several interesting patterns came up:
+    <br><br>
+    • Persistence of Trends: A strong upward/downward trend tends to persist over many days.
+    <br><br>
+    • Mean Reversion: After periods of high upward or downward movements in prices, the market always tends to revert to the mean.
+    <br><br>
+    • Volatility Clustering: Periods of high volatility are followed by periods of high volatility, and similarly low with low.
+    <br><br>
+    This has genuinely been a really enlightening project, but there's so much more to explore. I will push further with the more advanced statistical techniques, such as Markov Chain Monte Carlo for modeling the uncertainty and stochastic nature of the gold price movements. Finally, I plan to add more exogenous factors-economic indicators, geopolitical events, and sentiment analysis-can help further improve the model. And also, along the way develop a library to implement Markov chains and transition matrices in an accessible and simple way.
+    </p>
+    <br><br><br><br>
+</div>
+</body>
+</html>
