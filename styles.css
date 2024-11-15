@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
     background-color: #222222;
     height: 100vh; 
@@ -32,10 +32,35 @@ body {
     flex-direction: column;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 20px;
+
+}
+
+
+.home-button {
+    font-size: 100px;
+    color: #fff; 
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    padding: 5px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.home-button:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Space between project boxes */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -112,6 +137,12 @@ h2{
     color: #666666; 
 }
 
+a:hover .card {
+    transform: scale(1.05);
+    border:3px solid white;
+    transition: transform 0.3s, border 0.3s;
+}
+
 p {
     font-family: customfont;
   
@@ -151,13 +182,13 @@ i{
 }
 
 #links {
-    color: #fff; /* or any color you prefer */
+    color: #fff; 
     text-align: center;
 }
 
 #links .sub {
-    text-align: left; /* Left-aligns the title */
-    margin-left: 50px; /* Optional: adds a bit of left margin */
+    text-align: left;
+    margin-left: 50px; 
 }
 
 .cole {
@@ -165,7 +196,7 @@ i{
     flex-direction: row;
     justify-content:center;
 
-    gap: 30px; /* Space between each link */
+    gap: 30px; 
 }
 
 .flee a {
@@ -176,12 +207,12 @@ i{
 }
 
 .flee i {
-    font-size: 24px; /* Adjust size of icon */
-    margin-right: 10px; /* Space between icon and text */
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 .flee p {
-    font-size: 16px; /* Adjust font size for the text */
+    font-size: 16px; 
     margin: 0;
 }
 
