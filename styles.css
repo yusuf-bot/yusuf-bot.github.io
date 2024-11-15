@@ -3,6 +3,7 @@
 .floppy{
     display: flex; 
    
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: -1;
@@ -79,14 +80,7 @@
     src: url(sans.ttf);
 }
 
-.menu {
-    position: absolute;
-    top: 200px; 
-    left: 950px; 
-    display: flex;
-    flex-direction: column; 
-    gap: 20px; 
-}
+
 
 .menu a {
     font-family: 'Space Mono', monospace;;
@@ -274,15 +268,17 @@ h1.sub {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 30px;
+    margin-top: 50px;
     margin: 20px 0;
 }
 
 .menu a {
     font-size: 1.7rem;
     color: #eeeeee;
+    font-weight: 600;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 30px 2.5rem;
     border: 1px solid transparent;
     transition: color 0.3s, border 0.3s;
 }
