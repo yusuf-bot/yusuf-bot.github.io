@@ -35,49 +35,58 @@
     <section id="blogs">
         <h1 class='sub'>Blogs</h1>
         <div class="col-container">
+            <a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">
             <div class="card blog">
 
-                <h2><a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">Unraveling the Golden Thread</a></h2>
+                <h2>Unraveling the Golden Thread</h2>
 
                 <p>Quantitative algorithms have always blown me away...</p>
             </div>
+            </a>
         </div>
     </section>
-    <br>
 <hr>
     <section id="projects">
         <h1 class='sub'>Projects</h1>
         <div class="grid-container">
+            <a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">
             <div class="card">
 
-                <h2><a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">Qsiml</a></h2>
+                <h2>Qsiml</h2>
 
                 <p>A minimalist Quantum computer simulator</p>
             </div>
+            </a>
 
+            <a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">
             <div class="card">
 
-                <h2><a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">MazeNav</a></h2>
+                <h2>MazeNav</h2>
   
                 <p>A IDDFS search algorithm to solve any maze</p>
             </div>
+            </a>
 
+            <a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">
             <div class="card">
   
-                <h2><a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">CNN Character recognition</a></h2>
-      ]
+                <h2>CNN Character recognition</h2>
+      
                 <p>A Neural Network to recognize handwritten characters</p>
             </div>
+            </a>
 
+            <a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">
             <div class="card">
   
-                <h2><a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">Gold prices transition matrix</a></h2>
+                <h2>Gold prices transition matrix</h2>
 
-      ]
+      
                 <p>Markov chain implementation to predict gold prices</p>
             </div>
-
+            </a>
         </div>
+        
     </section>
 
 
@@ -196,6 +205,7 @@ let isDragging = false;
         if (!isDragging && floppyDisk) {
             floppyDisk.rotation.y += 0.01;
             floppyDisk.rotation.z += 0.01;
+          
         }
 
         renderer.render(scene, camera);
