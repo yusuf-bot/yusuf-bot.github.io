@@ -15,7 +15,7 @@ body {
 }
 
 .title {
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     font-size: 40px;
     color: #eeeeee;
     position: relative;
@@ -72,7 +72,7 @@ body {
     position: absolute;
 }
 .sub {
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     font-size: 40px;
     color: #eeeeee; 
     margin-left: 50px;
@@ -84,7 +84,7 @@ body {
 }
 
 @font-face {
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     src: url(sans.ttf);
 }
 
@@ -98,7 +98,7 @@ body {
 }
 
 .menu a {
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     font-weight: 600;
     font-size: 40px;
     color: #eeeeee ;
@@ -120,14 +120,14 @@ a{
     text-decoration: none; 
     cursor: pointer;
     color:white;
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     transition: color 0.3s;
 
 }
 
 h2{
     
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
     margin-left: 20px;
     color: white;
     
@@ -144,7 +144,7 @@ a:hover .card {
 }
 
 p {
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
   
     color: #eeeeee;
     font-size: large;
@@ -171,7 +171,7 @@ i{
     color: white;
     font-size:22px;
     margin:10px;
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
 }
 
 
@@ -219,7 +219,7 @@ i{
 h3{
     
     padding-top: 8px;
-    font-family: customfont;
+    font-family: 'Space Mono', monospace;;
 
     color: #eeeeee;
 }
