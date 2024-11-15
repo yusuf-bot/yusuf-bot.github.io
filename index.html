@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
-    <h1 class="title">Works of <br> Yusuf Sabuwala</h1>
+    <h1 class="title ">Works of <br> Yusuf Sabuwala</h1>
     <div class="floppy">
         <div id="floppyDiskContainer" ></div>
 
@@ -19,26 +19,26 @@
 
 
     <div class="menu">
-        <a href="#about">Who am I?</a>
-        <a href="#blogs">Blogs</a>
-        <a href="#projects">Projects</a>
-        <a href="#links">Links</a>
+        <a class='effect' data-value='Who am I?' href="#about">Who am I?</a>
+        <a class='effect' data-value='Blogs' href="#blogs">Blogs</a>
+        <a class='effect' data-value='Projects' href="#projects">Projects</a>
+        <a class='effect' data-value='Links' href="#links">Links</a>
     </div>
   
     <section id="about">
-        <h1 class='sub'>Hey!</h1>
+        <h1 class='sub effect' data-value="Hey!">Hey!</h1>
         <p>My names yusuf! I normally code, play chess, and do dumb stuff</p>
     <br>
     </section>
 
     <hr>
     <section id="blogs">
-        <h1 class='sub'>Blogs</h1>
+        <h1 class='sub effect' data-value="Blogs">Blogs</h1>
         <div class="col-container">
             <a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">
             <div class="card blog">
 
-                <h2>Unraveling the Golden Thread</h2>
+                <h2 class='effect' data-value='Unraveling the Golden Thread'>Unraveling the Golden Thread</h2>
 
                 <p>Quantitative algorithms have always blown me away...</p>
             </div>
@@ -47,12 +47,12 @@
     </section>
 <hr>
     <section id="projects">
-        <h1 class='sub'>Projects</h1>
+        <h1 class='sub effect' data-value="Projects">Projects</h1>
         <div class="grid-container">
             <a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">
             <div class="card">
 
-                <h2>Qsiml</h2>
+                <h2 class='effect' data-value='Qsiml'>Qsiml</h2>
 
                 <p>A minimalist Quantum computer simulator</p>
             </div>
@@ -61,7 +61,7 @@
             <a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">
             <div class="card">
 
-                <h2>MazeNav</h2>
+                <h2 class='effect' data-value='MazeNav'>MazeNav</h2>
   
                 <p>A IDDFS search algorithm to solve any maze</p>
             </div>
@@ -70,7 +70,7 @@
             <a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">
             <div class="card">
   
-                <h2>CNN Character recognition</h2>
+                <h2 class='effect' data-value='CNN Character recognition'>CNN Character recognition</h2>
       
                 <p>A Neural Network to recognize handwritten characters</p>
             </div>
@@ -79,7 +79,7 @@
             <a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">
             <div class="card">
   
-                <h2>Gold prices transition matrix</h2>
+                <h2 class='effect' data-value='Gold prices transition matrix'>Gold prices transition matrix</h2>
 
       
                 <p>Markov chain implementation to predict gold prices</p>
@@ -92,7 +92,7 @@
 
     <hr>
     <section id="links">
-        <h1 class='sub'>Links</h1>
+        <h1 class='sub effect' data-value="Links">Links</h1>
   <div class="cole">
             <div class="flee"><a><i class="fab fa-github"> <p>Github</p></i></a></div>
             <div class="flee"><a><i class="fab fa-linkedin"> <p>LinkedIn</p></i></a></div>
@@ -100,7 +100,42 @@
 </div>
     </section>
 
+<script>
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
+document.querySelectorAll(".effect").forEach(element => {
+  let interval = null;
+
+  element.onmouseover = event => {  
+    let iteration = 0;
+    clearInterval(interval); // Clear any existing interval
+
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return event.target.dataset.value[index];
+          }
+          return letters[Math.floor(Math.random() * letters.length)];
+        })
+        .join("");
+
+      if (iteration >= event.target.dataset.value.length) { 
+        clearInterval(interval);
+      }
+      
+      iteration += 1 / 3;
+    }, 30);
+  };
+
+  element.onmouseleave = event => {
+    clearInterval(interval); // Stop the interval
+    event.target.innerText = event.target.dataset.value; // Reset text to original value
+  };
+});
+
+</script>
 
     <script>
         // Scene and camera setup
