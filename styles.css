@@ -1,9 +1,4 @@
 
-body {
-    background-color: #222222;
-    height: 100vh; 
-    margin: 0; 
-}
 
 .floppy{
     display: flex; 
@@ -29,17 +24,7 @@ body {
 }
 
 
-.title {
-    font-family: 'Space Mono', monospace;;
-    font-size: 40px;
-    color: #eeeeee;
-    position: relative;
-    left: 30px;
-}
 
-#about{
-    text-align: center;
-}
 
 .col-container{
     align-items: center;
@@ -71,12 +56,6 @@ body {
     transform: scale(1.1);
 }
 
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px;
-}
 
 .art{
     width:1000px;
