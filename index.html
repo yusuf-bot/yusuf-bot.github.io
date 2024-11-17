@@ -1,108 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Yusuf</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
-</head>
-<body>
-    <h1 class="title ">Works of <br> Yusuf Sabuwala</h1>
-<hr>
-    <div class="menu">
-        <a class='effect' data-value='Who am I?' href="#about">Who am I?</a>
-        <a class='effect' data-value='Blogs' href="#blogs">Blogs</a>
-        <a class='effect' data-value='Projects' href="#projects">Projects</a>
-        <a class='effect' data-value='Links' href="#links">Links</a>
-    </div>  
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Yusuf</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+    </head>
+    <body>
+        <div id="blur"></div>
+        <div id="blob"></div>
+       
 
-
-    <div class="floppy">
-        <div id="floppyDiskContainer" ></div>
-
-    </div>
-
-
-  
-    <section id="about">
-        <h1 class='sub effect' data-value="Hey!">Hey!</h1>
-        <p>My names yusuf! I normally code, play chess, and do dumb stuff</p>
-    <br>
-    </section>
-
+        <h1 class="title effect" data-value="Yusuf Sabuwala">Yusuf Sabuwala</h1>
     <hr>
-    <section id="blogs">
-        <h1 class='sub effect' data-value="Blogs">Blogs</h1>
-        <div class="col-container">
-            <a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">
-            <div class="card blog">
+        <div class="menu">
+            <a class='effect' data-value='Who am I?' href="#about">Who am I?</a>
+            <a class='effect' data-value='Blogs' href="#blogs">Blogs</a>
+            <a class='effect' data-value='Projects' href="#projects">Projects</a>
+            <a class='effect' data-value='Links' href="#links">Links</a>
+        </div>  
 
-                <h2 class='effect' data-value='Unraveling the Golden Thread'>Unraveling the Golden Thread</h2>
 
-                <p>Quantitative algorithms have always blown me away...</p>
-            </div>
-            </a>
+        <div class="floppy">
+            <div id="floppyDiskContainer" ></div>
+
         </div>
-    </section>
-<hr>
-    <section id="projects">
-        <h1 class='sub effect' data-value="Projects">Projects</h1>
-        <div class="grid-container">
-            <a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">
-            <div class="card">
 
-                <h2 class='effect' data-value='Qsiml'>Qsiml</h2>
 
-                <p>A minimalist Quantum computer simulator</p>
+    
+        <section id="about">
+            <h1 class='sub effect' data-value="Hey!">Hey!</h1>
+            <p>My names yusuf! I normally code, play chess, and do dumb stuff</p>
+        <br>
+        </section>
+
+        <hr>
+        <section id="blogs">
+            <h1 class='sub effect' data-value="Blogs">Blogs</h1>
+            <div class="col-container">
+                <a href="blogs/gold prices/blog.html" target="_blank" rel="noopener noreferrer">
+                <div class="card blog">
+
+                    <h2 class='effect' data-value='Unraveling the Golden Thread'>Unraveling the Golden Thread</h2>
+
+                    <p>Quantitative algorithms have always blown me away...</p>
+                </div>
+                </a>
             </div>
-            </a>
+        </section>
+    <hr>
+        <section id="projects">
+            <h1 class='sub effect' data-value="Projects">Projects</h1>
+            <div class="grid-container">
+                <a href="https://github.com/MustafaAamir/qsiml" target="_blank" rel="noopener noreferrer">
+                <div class="card">
 
-            <a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">
-            <div class="card">
+                    <h2 class='effect' data-value='Qsiml'>Qsiml</h2>
 
-                <h2 class='effect' data-value='MazeNav'>MazeNav</h2>
-  
-                <p>A IDDFS search algorithm to solve any maze</p>
-            </div>
-            </a>
+                    <p>A minimalist Quantum computer simulator</p>
+                </div>
+                </a>
 
-            <a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">
-            <div class="card">
-  
-                <h2 class='effect' data-value='CNN Character recognition'>CNN Character recognition</h2>
-      
-                <p>A Neural Network to recognize handwritten characters</p>
-            </div>
-            </a>
+                <a href="https://github.com/yusuf-bot/MazeNav" target="_blank" rel="noopener noreferrer">
+                <div class="card">
 
-            <a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">
-            <div class="card">
-  
-                <h2 class='effect' data-value='Gold prices transition matrix'>Gold prices transition matrix</h2>
+                    <h2 class='effect' data-value='MazeNav'>MazeNav</h2>
+    
+                    <p>A IDDFS search algorithm to solve any maze</p>
+                </div>
+                </a>
 
-      
-                <p>Markov chain implementation to predict gold prices</p>
-            </div>
-            </a>
-        </div>
+                <a href="https://github.com/yusuf-bot/character-recognition" target="_blank" rel="noopener noreferrer">
+                <div class="card">
+    
+                    <h2 class='effect' data-value='CNN Character recognition'>CNN Character recognition</h2>
         
-    </section>
+                    <p>A Neural Network to recognize handwritten characters</p>
+                </div>
+                </a>
+
+                <a href="https://github.com/yusuf-bot/gold-prices" target="_blank" rel="noopener noreferrer">
+                <div class="card">
+    
+                    <h2 class='effect' data-value='Gold prices transition matrix'>Gold prices transition matrix</h2>
+
+        
+                    <p>Markov chain implementation to predict gold prices</p>
+                </div>
+                </a>
+            </div>
+            
+        </section>
 
 
-    <hr>
-    <section id="links">
-        <h1 class='sub effect' data-value="Links">Links</h1>
-  <div class="cole">
-            <div class="flee"><a><i class="fab fa-github"> <p>Github</p></i></a></div>
-            <div class="flee"><a><i class="fab fa-linkedin"> <p>LinkedIn</p></i></a></div>
-            <div class="flee"><a><i class="fab fa-instagram"> <p>Instagram</p></i></a></div>
-</div>
-    </section>
+        <hr>
+        <section id="links">
+            <h1 class='sub effect' data-value="Links">Links</h1>
+    <div class="cole">
+                <div class="flee"><a><i class="fab fa-github"> <p>Github</p></i></a></div>
+                <div class="flee"><a><i class="fab fa-linkedin"> <p>LinkedIn</p></i></a></div>
+                <div class="flee"><a><i class="fab fa-instagram"> <p>Instagram</p></i></a></div>
+    </div>
+        </section>
+    
+    <script src="script.js"></script>
 
-<script src="script.js"></script>
-</body>
-</html>
+    </body>
+    </html>
