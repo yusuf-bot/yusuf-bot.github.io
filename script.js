@@ -50,8 +50,8 @@ const scene = new THREE.Scene();
         scene.add(pointLight);
 
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(5, 5, 5).normalize();
+        const directionalLight = new THREE.PointLight(0xffffff, 1);
+        directionalLight.position.set(0,0, 5).normalize();
         scene.add(directionalLight);
 
         const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
@@ -60,11 +60,12 @@ const scene = new THREE.Scene();
 
         // Renderer setup
         const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setClearColor(0x000000, 0);
         renderer.setSize(600, 400);
         document.getElementById('floppyDiskContainer').appendChild(renderer.domElement);
 
         // Set the background color of the scene to #eeeeee
-        scene.background = new THREE.Color(0x222222);
+    
 
         // Load the 3D model
         let floppyDisk; 
@@ -153,14 +154,18 @@ window.addEventListener('resize', onWindowResize, false);
 // Call the resize function once to ensure it starts with the correct size
 onWindowResize();
 
-const floppyContainer = document.getElementById('floppyDiskContainer');
-    
-        // Change cursor to grabbing when mouse is held down
-        floppyContainer.addEventListener('mousedown', () => {
-            floppyContainer.style.cursor = 'grabbing';
-        });
-    
-        // Revert to grab cursor when mouse is released
-        floppyContainer.addEventListener('mouseup', () => {
-            floppyContainer.style.cursor = 'grab';
-        });
+
+const blob = document.getElementById("blob");
+
+window.onpointermove = event => {
+    const { clientX, clientY } = event;
+
+    // Smooth animation
+    blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+    }, { duration: 3000, fill: "forwards" });
+};
+const floppyDiskContainer = document.getElementById('floppyDiskContainer');
+floppyDiskContainer.style.pointerEvents = "auto";
+blob.style.pointerEvents = "none";
