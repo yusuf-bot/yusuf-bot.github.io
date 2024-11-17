@@ -141,11 +141,14 @@ p {
 #floppyDiskContainer {
     width: 800px;
     height: 600px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-top: 30px; 
-    cursor:grab
-    
+    pointer-events: auto; /* Allow pointer events */
+    margin-top: 30px;  /* Translucent background */
+    backdrop-filter: blur(12px);
+    position:relative;
+    z-index: 2;    
 }
+
+
 
 img {
 display: block;
@@ -225,11 +228,52 @@ body {
 
 
 .title {
-    font-size: 2rem; 
+    font-size: 3rem; 
     color: #eeeeee;
     text-align: center; 
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
+
+@keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+  
+  #blob {
+    background-color: white;
+    height: 50%;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+    z-index: -2;
+  }
+  
+  #blur {
+    position: fixed; /* Ensures the blur effect applies across the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(12vmax); /* Adjust blur intensity if needed */
+    z-index: -1;
+  }
 
 #about, #blogs, #projects, #links {
     padding: 20px;
@@ -321,3 +365,13 @@ h1.sub {
         gap: 15px;
     }
 }
+
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    top:0px;    
+    height: 100%;
+    background-color: #222222; /* Customize the background color */
+    z-index: -1; /* Send it behind your content */
+  }
